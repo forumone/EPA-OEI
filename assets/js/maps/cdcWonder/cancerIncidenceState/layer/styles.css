@@ -1,0 +1,8 @@
+/** choropleth visualization */
+
+#cdc_cancer_incidence_state{
+  polygon-fill: #FFFFB2;
+  line-color: #FFF;
+  line-width: 1;
+  line-opacity: 1;
+}

@@ -1,0 +1,54 @@
+// @file
+// Styles for btn-toolbar.
+
+.btn-toolbar {
+  & > .btn, & > .btn-group, & > .input-group {
+    margin-left: 5px;
+  }
+  
+  .btn-group, .input-group {
+    float: left;
+  }
+  
+  .btn-group {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    
+    & > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    
+    & > .btn:first-child {
+      margin-left: 0;
+    }
+    
+    .btn {
+      float: left;
+      position: relative;
+    }
+    
+    .btn-default {
+      background-color: #fff;
+      border-color: #ccc;
+      color: #333;
+    }
+    
+    .btn {
+      @include border-radius(4px);
+      background-image: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-block;
+      //font-size: 14px;
+      font-weight: 400;
+      line-height: 1.428571429;
+      margin-bottom: 0;
+      padding: 6px 12px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+  }
+}

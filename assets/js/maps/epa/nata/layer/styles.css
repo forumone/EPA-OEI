@@ -1,0 +1,8 @@
+/** choropleth visualization */
+
+#nata_cancer_risks{
+  polygon-fill: #F1EEF6;
+  line-color: #FFF;
+  line-width: 1;
+  line-opacity: 1;
+}

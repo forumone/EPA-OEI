@@ -29,11 +29,15 @@
     -->
 
     <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/vendor/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="/vendor/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+    <link rel="stylesheet" href="/styles/no-mq.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <!--STYLES END-->
   </head>
 
-  <body>
+  <body ng-app="epaOei">
     <%- body %>
 
 
@@ -89,6 +93,48 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/vendor/jquery/jquery.js"></script>
+    <script src="/vendor/angular/angular.js"></script>
+    <script src="/vendor/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="/vendor/lodash/lodash.js"></script>
+    <script src="/vendor/angular-animate/angular-animate.js"></script>
+    <script src="/vendor/angular-aria/angular-aria.js"></script>
+    <script src="/vendor/angular-cookies/angular-cookies.js"></script>
+    <script src="/vendor/angular-leaflet-directive/angular-leaflet-directive.js"></script>
+    <script src="/vendor/angular-material/angular-material.js"></script>
+    <script src="/vendor/angular-mocks/angular-mocks.js"></script>
+    <script src="/vendor/angular-resource/angular-resource.js"></script>
+    <script src="/vendor/angular-route/angular-route.js"></script>
+    <script src="/vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/vendor/angular-slider/slider.js"></script>
+    <script src="/vendor/angular-ui-router/angular-ui-router.js"></script>
+    <script src="/vendor/jquery-selectability/jquery.selectability.js"></script>
+    <script src="/vendor/leaflet/leaflet-src.js"></script>
+    <script src="/js/maps/index.js"></script>
+    <script src="/js/interface/index.js"></script>
+    <script src="/js/templates.js"></script>
+    <script src="/js/cartocss.js"></script>
+    <script src="/js/templates-map.js"></script>
+    <script src="/js/interface/states/home/index.js"></script>
+    <script src="/js/maps/cancerScore/index.js"></script>
+    <script src="/js/maps/cartoDbLayers/index.js"></script>
+    <script src="/js/maps/cdcWonder/cancerIncidenceState/infowindow/index.js"></script>
+    <script src="/js/maps/cdcWonder/cancerIncidenceState/layer/index.js"></script>
+    <script src="/js/maps/colors/index.js"></script>
+    <script src="/js/maps/epa/nata/infowindow/index.js"></script>
+    <script src="/js/maps/epa/nata/layer/index.js"></script>
+    <script src="/js/maps/epa/sld/d3Bpo3/infowindow/index.js"></script>
+    <script src="/js/maps/epa/sld/d3Bpo3/layer/index.js"></script>
+    <script src="/js/maps/epa/sld/rPctLowWa/infowindow/index.js"></script>
+    <script src="/js/maps/epa/sld/rPctLowWa/layer/index.js"></script>
+    <script src="/js/maps/epa/trinet/infowindow/index.js"></script>
+    <script src="/js/maps/epa/trinet/layer/index.js"></script>
+    <script src="/js/maps/hsa/access-to-care/infowindow/index.js"></script>
+    <script src="/js/maps/hsa/access-to-care/layer/index.js"></script>
+    <script src="/js/maps/infoWindow/index.js"></script>
+    <script src="/js/maps/locationData/index.js"></script>
+    <script src="/js/maps/nci/county-cancer-rate/infowindow/index.js"></script>
+    <script src="/js/maps/nci/county-cancer-rate/layer/index.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

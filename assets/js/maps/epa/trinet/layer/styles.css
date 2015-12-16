@@ -1,0 +1,14 @@
+/** choropleth visualization */
+
+#tri_net_emissions_2013{
+  marker-fill-opacity: 0.9;
+  marker-line-color: #FFF;
+  marker-line-width: 1.5;
+  marker-line-opacity: 1;
+  marker-placement: point;
+  marker-multi-policy: largest;
+  marker-type: ellipse;
+  marker-fill: #FF5C00;
+  marker-allow-overlap: true;
+  marker-clip: false;
+}

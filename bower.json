@@ -28,6 +28,8 @@
     "angular-mocks": "~1.4.1",
     "angular-material-icons": "~0.6.0",
     "compass-mixins": "~1.0.2",
-    "singularity": "~1.6.2"
+    "singularity": "~1.6.2",
+    "angular-leaflet-directive": "~0.10.0",
+    "angular-slider": "~0.2.15"
   }
 }

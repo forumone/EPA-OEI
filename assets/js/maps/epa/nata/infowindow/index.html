@@ -1,0 +1,20 @@
+<info-window title="{{name}}" short-name="{{shortName}}">
+  <div class="form-item form-item--slider form-item--light">
+    <label class="form-item__label">change opacity
+      <slider floor="0" ceiling="100" step="5" precision="0" ng-model="opacity"></slider>
+    </label>
+  </div>
+  <div class="form-item form-item--radios form-item--light">
+    <fieldset class="form-item__fieldset">
+      <legend class="form-item__legend">Compare to</legend>
+      <div class="form-item form-item--radio">
+        <input id="compare-nata-national" class="form-radio" ng-model="options.type" value="compare" name="nata_type" type="radio">
+        <label class="form-item__label" for="compare-nata-national">National Average</label>
+      </div>
+      <div class="form-item form-item--radio">
+        <input id="compare-nata-local" class="form-radio" ng-model="options.type" value="raw" name="nata_type" type="radio">
+        <label class="form-item__label" for="compare-nata-local">Local Percentages</label>
+      </div>
+    </fieldset>
+  </div>
+</info-window>

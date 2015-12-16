@@ -1,0 +1,8 @@
+/** choropleth visualization */
+
+#tl_2014_census_tracts{
+  polygon-fill: #B10026;
+  line-color: #FFF;
+  line-width: 1;
+  line-opacity: 1;
+}

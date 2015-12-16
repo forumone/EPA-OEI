@@ -1,0 +1,9 @@
+/** choropleth visualization */
+
+#nci_county{
+  polygon-fill: #FFFFB2;
+  polygon-opacity: 0.8;
+  line-color: #FFF;
+  line-width: 1;
+  line-opacity: 1;
+}
