@@ -34,7 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  'GET /api/content/:page' : 'ContentController.getContent',
 
   /***************************************************************************
   *                                                                          *
