@@ -1,1 +1,12 @@
+<header class="header" flex>
+  <div class="header__logo" flex><a ui-sref="home"></a></div>
+  <md-tabs md-border-bottom md-class="header__menu">
+  	<md-tab md-on-select="goState('data')">
+  	  <h3>Data</h3>
+    </md-tab>
+    <md-tab md-on-select="goState('about')">
+  	  <h3>about</h3>
+    </md-tab>
+  </md-tabs>
+</header>
 <ui-view></ui-view>

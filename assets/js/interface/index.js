@@ -1,7 +1,7 @@
-var epaOei = angular.module('epaOei', [ 'ngRoute', 'ui.router', 'ngSanitize', 'leaflet-directive', 'nciMaps' ]);
-epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider) {
-  // $locationProvider.html5Mode(true);
-
+var epaOei = angular.module('epaOei', [ 'ngRoute', 'ngMaterial', 'ui.router', 'ngSanitize', 'leaflet-directive', 'nciMaps' ]);
+epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $mdThemingProvider) {
+  $mdThemingProvider.theme('default').primaryPalette('indigo').accentPalette('light-blue');
+  
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -24,7 +24,7 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider) {
           value : 'about'
         },
         tabIndex : {
-          value : 1
+          value : 2
         }
       }
     })
@@ -37,8 +37,13 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider) {
           value : 'data'
         },
         tabIndex : {
-          value : 2
+          value : 1
         }
       }
     });
+})
+.run(function($rootScope, $state) {
+  $rootScope.goState = function(state) {
+    $state.go(state);
+  }
 });
