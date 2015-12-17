@@ -15,6 +15,30 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider) {
         }
       }
     })
-}).run(function ($rootScope) {
-  
+    .state('about', {
+      url : '/about',
+      templateUrl : 'states/page/index.html',
+      controller : 'PageController',
+      params : {
+        page : {
+          value : 'about'
+        },
+        tabIndex : {
+          value : 1
+        }
+      }
+    })
+    .state('data', {
+      url : '/data',
+      templateUrl : 'states/page/index.html',
+      controller : 'PageController',
+      params : {
+        page : {
+          value : 'data'
+        },
+        tabIndex : {
+          value : 2
+        }
+      }
+    });
 });
