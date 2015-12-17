@@ -1,0 +1,16 @@
+---
+forumone::webserver::vhosts:  
+  vagrant: 
+    path: "/vagrant/public"
+  
+forumone::nodejs::modules:
+  - grunt-cli
+  - bower
+  - sails
+  
+forumone::ports:
+  - 1337
+  
+nodejs::repo_url_suffix: 'node_0.12'
+nodejs::manage_package_repo: true
+nodejs::npm_package_ensure: true

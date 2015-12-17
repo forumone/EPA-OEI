@@ -1,0 +1,14 @@
+---
+classes: 
+  - forumone::varnish
+  - forumone::ruby
+  - memcached
+
+forumone::webserver::webserver: nginx
+
+forumone::php::prefix: "php55u"
+
+forumone::php::modules:
+  - pecl-memcached
+  - gd
+  - opcache
