@@ -29,7 +29,7 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $m
           value : 'about'
         },
         tabIndex : {
-          value : 2
+          value : 1
         }
       }
     })
@@ -42,14 +42,17 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $m
           value : 'data'
         },
         tabIndex : {
-          value : 1
+          value : 0
         }
       }
     });
 })
-.run(function($rootScope, $state) {
+.run(function($rootScope, $state, $stateParams) {
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $rootScope.selectedTab = (_.has(toState.params, 'tabIndex')) ? toState.params.tabIndex.value : -1;
+  });
+  
   $rootScope.goState = function(state) {
-    console.log($state);
-    //$state.go(state);
+    $state.go(state);
   }
 });
