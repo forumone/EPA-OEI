@@ -1,1 +1,14 @@
-<img ng-src="/images/map.png" />
+<md-card>
+  <md-card-title layout="row">
+     <md-card-title-text flex>Toxic Release Inventory</md-card-title-text>
+     <md-button class="md-icon-button launch" flex="none" ng-click="editLayer($event)" aria-label="Edit layer">
+      <ng-md-icon icon="edit"></ng-md-icon>
+    </md-button>
+    <md-button class="md-icon-button launch" flex="none" ng-click="deleteLayer($event)" aria-label="Delete layer">
+      <ng-md-icon icon="delete"></ng-md-icon>
+    </md-button>
+  </md-card-title>
+  <md-card-content>
+    <img ng-src="/images/map.png" />
+  </md-card-content>
+</md-card>

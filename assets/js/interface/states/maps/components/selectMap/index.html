@@ -1,0 +1,23 @@
+<md-dialog aria-label="Edit Layer" ng-cloak class="edit-layer"> 
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{title}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <ng-md-icon icon="close" aria-label="Close dialog"></md-icon> 
+      </md-button>
+    </div>
+  </md-toolbar> 
+  <md-dialog-content>
+    <md-input-container>
+      <label>Layer</label>
+      <md-select ng-model="currentLayer">
+      
+      </md-select>
+    </md-input-container>
+  </md-dialog-content>
+  <md-dialog-actions layout="row" layout-align="end center" layout-padding>
+    <md-button class="md-raised md-primary" ng-click="setLayer()">Save</md-button>
+    <md-button class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
+  </md-dialog-actions>
+</md-dialog>
