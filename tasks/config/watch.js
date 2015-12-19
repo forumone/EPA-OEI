@@ -9,22 +9,24 @@
  * and re-run the appropriate tasks.
  *
  * For usage docs see:
- * 		https://github.com/gruntjs/grunt-contrib-watch
+ *    https://github.com/gruntjs/grunt-contrib-watch
  *
  */
 module.exports = function(grunt) {
 
-	grunt.config.set('watch', {
-		assets: {
+  grunt.config.set('watch', {
+    assets: {
+      options: {
+        livereload: true
+      },
+      // Assets to watch:
+      files: ['assets/**/*', 'tasks/pipeline.js'],
 
-			// Assets to watch:
-			files: ['assets/**/*', 'tasks/pipeline.js', '!**/node_modules/**'],
+      // When assets are changed:
+      tasks: ['syncAssets' , 'linkAssets']
+    },
+  });
 
-			// When assets are changed:
-			tasks: ['syncAssets' , 'linkAssets']
-		}
-	});
-
-	grunt.loadNpmTasks('grunt-simple-watch');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-simple-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 };
