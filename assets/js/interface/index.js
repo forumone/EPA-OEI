@@ -1,4 +1,4 @@
-var epaOei = angular.module('epaOei', [ 'ngRoute', 'ngMaterial', 'ui.router', 'ngSanitize', 'leaflet-directive', 'nciMaps' ]);
+var epaOei = angular.module('epaOei', [ 'ngRoute', 'ngMaterial', 'ui.router', 'ngSanitize', 'leaflet-directive', 'nciMaps', 'ngMdIcons' ]);
 epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $mdThemingProvider) {
   $mdThemingProvider.theme('default').primaryPalette('indigo').accentPalette('light-blue');
   
@@ -14,6 +14,11 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $m
           controller: 'HomeController',
         }
       }
+    })
+    .state('maps', {
+      url: '/maps',
+      templateUrl : 'states/maps/index.html',
+      controller : 'MapsController',
     })
     .state('about', {
       url : '/about',
@@ -44,6 +49,7 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $m
 })
 .run(function($rootScope, $state) {
   $rootScope.goState = function(state) {
-    $state.go(state);
+    console.log($state);
+    //$state.go(state);
   }
 });
