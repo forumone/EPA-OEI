@@ -1,5 +1,10 @@
-angular.module('epaOei').controller('MapsController', function($scope, $stateParams, $state, leafletData, $injector, cartoDbLayers, $mdDialog, $mdMedia) {
-  $scope.maps = [];
+angular.module('epaOei').controller('MapsController', function($scope, $stateParams, $state, leafletData, $injector, cartoDbLayers, $mdDialog, $mdMedia, locationData) {
+  $scope.maps = _.map(locationData.layers, function(layer) {
+    return {
+      layer : layer,
+      zoom : $stateParams.zoom
+    }
+  });
   
   $scope.addMap = function(evt) {
     $mdDialog.show({

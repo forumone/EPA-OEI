@@ -9,6 +9,8 @@
     </md-button>
   </md-card-title>
   <md-card-content>
-    <img ng-src="/images/map.png" />
+    <leaflet center="center" tiles="baselayer">
+      <div class="legends" ng-bind-html="legendsHtml"></div>
+    </leaflet>
   </md-card-content>
 </md-card>

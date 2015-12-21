@@ -1,1 +1,16 @@
-<h1>Foo</h1>
+<div class="layout-constrain" layout="column">
+  <div layout="row" class="location-selector" layout-align="center center" layout-padding>
+    <div>
+      <h3 class="location-selector__title">Choose a location</h3>
+      <div class="location-selector__description">For example, your neighborhood!</div>
+    </div>
+    <div layout="row">
+      <md-input-container md-no-float class="md-block">
+        <input type="text" name="location" ng-model="location" placeholder="City, zip code, or even street" aria-label="City, zip code, or even street" />
+      </md-input-container>
+      <md-button class="md-fab md-primary" flex="none" ng-click="showMap()" aria-label="Show map">
+        <ng-md-icon icon="search"></ng-md-icon>
+      </md-button>
+    </div>
+  </div>
+</div>

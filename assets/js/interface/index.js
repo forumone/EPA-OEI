@@ -16,9 +16,25 @@ epaOei.config(function($urlRouterProvider, $locationProvider, $stateProvider, $m
       }
     })
     .state('maps', {
-      url: '/maps',
+      url : '/maps?zoom&lat&lng&layers',
+      reloadOnSearch: false,
       templateUrl : 'states/maps/index.html',
       controller : 'MapsController',
+      params: {
+        lat: {
+          value: '38.2678127',
+        },
+        lng: {
+          value: '-79.2138202',
+        },
+        zoom: {
+          value: '7',
+        },
+        layers: {
+          array : true,
+          value: []
+        },
+      }
     })
     .state('about', {
       url : '/about',
