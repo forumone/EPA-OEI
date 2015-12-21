@@ -55,7 +55,32 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
             return wrap(promise);
           })
           .then(function(layer) {
-            return layer.addTo(scope.leafletMap.getNativeMap());
+            return $q.all({
+              name: scope.name,
+              layer: layer,
+              service: scope.service,
+              legend: cartoDbLayers.makeLegend(scope.service, scope.options),
+            })
+          })
+          .then(function(info) {
+            scope.leafletMap.getNativeMap().addLayer(info.layer);
+            
+            info.layer.setInteraction(true);
+            info.layer.setOpacity(0.5);
+            info.layer.on('featureClick', function () {
+              popupInfo.push([info].concat(_.toArray(arguments)));
+              showPopup();
+            });
+            
+            scope.legend = new cdb.geo.ui.Legend
+            .Stacked({
+              legends: [ info.legend ],
+            })
+            .render()
+            .$el
+            .wrap('<div>')
+            .parent()
+            .html();
           })
           .catch(function(err) {
             console.log(err);
@@ -105,13 +130,6 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
           lng: lng,
         };
       }
-      
-      $scope.baselayer = {
-        url : 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-        options : {
-          attribution : '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }
-      };
       
       $scope.center = parseCenter();
     }
