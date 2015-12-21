@@ -19,12 +19,13 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
         if (angular.isDefined(scope.map)) {
           scope.layerData = scope.layers[scope.map.layer];
           scope.service = $injector.get(scope.layerData.$service);
-          scope.name = scope.service.getName();
           
           scope.colors = mapColors.allocate(scope.service.scaleType),
-          scope.options = _.extend({}, {
+          scope.options = _.extend(scope.layerData, {
             $$colors: scope.colors,
           });
+
+          scope.name = scope.service.getName(scope.options);
           
           scope.sublayer = {
             sql: scope.service.sql(scope.options),

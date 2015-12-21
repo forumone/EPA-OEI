@@ -19,7 +19,6 @@ angular.module('epaOei').controller('MapsController', function($scope, $statePar
       }
     })
     .then(function(layer) {
-      console.log(layer);
       $scope.maps.push({ 
         layer : layer,
         zoom : $stateParams.zoom
