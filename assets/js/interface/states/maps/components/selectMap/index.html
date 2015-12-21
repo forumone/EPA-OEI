@@ -1,4 +1,4 @@
-<md-dialog aria-label="Edit Layer" ng-cloak class="edit-layer"> 
+<md-dialog aria-label="Edit Layer" ng-cloak class="edit-layer" flex="50"> 
   <md-toolbar>
     <div class="md-toolbar-tools">
       <h2>{{title}}</h2>
@@ -8,16 +8,44 @@
       </md-button>
     </div>
   </md-toolbar> 
-  <md-dialog-content>
-    <md-input-container>
-      <label>Layer</label>
-      <md-select ng-model="currentLayer">
-      
+  <md-dialog-content layout="column" layout-align="center center" layout-margin layout-padding>
+    <md-input-container flex="100">
+      <md-select ng-model="currentLayer" aria-label="Layer" placeholder="Layer">
+        <md-optgroup label="Demographics">
+          <md-option value="r_pctlowwa">% Low wage workers</md-option>
+        </md-optgroup>
+        <md-optgroup label="Built Environment">
+          <md-option value="d3bpo3">Intersection density</md-option>
+        </md-optgroup>
+        <md-optgroup label="Cancer Incidence">
+          <md-option value="all_b_all">All cancers</md-option>
+          <md-option value="bla_b_all">Bladder cancer</md-option>
+          <md-option value="brs_f_all">Breast cancer</md-option>
+          <md-option value="col_b_all">Colon and rectal cancer</md-option>
+          <md-option value="ute_f_all">Endometrial cancer</md-option>
+          <md-option value="krp_b_all">Kidney cancer</md-option>
+          <md-option value="leu_b_all">Leukemia (all types)</md-option>
+          <md-option value="lng_b_all">Lung cancer</md-option>
+          <md-option value="mel_b_all">Melanoma</md-option>
+          <md-option value="nhl_b_all">Non-Hodgkin's lymphoma</md-option>
+          <md-option value="c19_b_all">Pancreatic cancer</md-option>
+          <md-option value="pro_m_all">Prostate cancer</md-option>
+          <md-option value="thy_b_all">Thyroid cancer</md-option>
+        </md-optgroup>
+        <md-optgroup label="Cancer Risk">
+          <md-option value="nata">National toxics assessment</md-option>
+        </md-optgroup>
+        <md-optgroup label="Exposure Data">
+          <md-option value="trinet">Toxic release inventory</md-option>
+        </md-optgroup>
+        <md-optgroup label="Access To Health Care">
+          <md-option value="hsa">Physicians per capita</md-option>
+        </md-optgroup>
       </md-select>
     </md-input-container>
   </md-dialog-content>
   <md-dialog-actions layout="row" layout-align="end center" layout-padding>
-    <md-button class="md-raised md-primary" ng-click="setLayer()">Save</md-button>
+    <md-button class="md-raised md-primary" ng-click="setLayer()">Add layer</md-button>
     <md-button class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
   </md-dialog-actions>
 </md-dialog>

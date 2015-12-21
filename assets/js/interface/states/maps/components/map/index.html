@@ -1,6 +1,6 @@
 <md-card>
   <md-card-title layout="row">
-     <md-card-title-text flex>Toxic Release Inventory</md-card-title-text>
+     <md-card-title-text flex><h4>{{name}}</h4></md-card-title-text>
      <md-button class="md-icon-button launch" flex="none" ng-click="editLayer($event)" aria-label="Edit layer">
       <ng-md-icon icon="edit"></ng-md-icon>
     </md-button>
@@ -9,8 +9,6 @@
     </md-button>
   </md-card-title>
   <md-card-content>
-    <leaflet center="center" tiles="baselayer">
-      <div class="legends" ng-bind-html="legendsHtml"></div>
-    </leaflet>
+    <div class="map__map"></div>
   </md-card-content>
 </md-card>

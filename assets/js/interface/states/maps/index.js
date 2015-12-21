@@ -19,7 +19,11 @@ angular.module('epaOei').controller('MapsController', function($scope, $statePar
       }
     })
     .then(function(layer) {
-      $scope.maps.push({ id : 'foo' });
+      console.log(layer);
+      $scope.maps.push({ 
+        layer : layer,
+        zoom : $stateParams.zoom
+      });
     });
   };
 });
