@@ -3,10 +3,6 @@
 
 body {
  font-family: "Roboto", Arial;
-
-  background: image-url('/images/map.png');
-  background-position: 50% 50%;
-  background-size: cover;
 }
 
 .homepage-intro {
@@ -14,11 +10,13 @@ body {
 }
 
 .homepage-intro__bar {
-  width: 99%;
+   width: 99%; 
 }
 
 .homepage-intro__title {
-  background: image-url('/images/ToxinMappr_logo.png');
+  min-height: 150px; 
+  background-image: url('/images/ToxinMappr_logo.png');
+  background-repeat: no-repeat;
 }
 
 .location_resources {
