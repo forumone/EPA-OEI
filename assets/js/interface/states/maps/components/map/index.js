@@ -71,7 +71,6 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
               popupInfo.push([info].concat(_.toArray(arguments)));
               showPopup();
             });
-            
             scope.legend = new cdb.geo.ui.Legend
             .Stacked({
               legends: [ info.legend ],
