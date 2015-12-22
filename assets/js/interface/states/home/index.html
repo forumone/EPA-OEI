@@ -1,4 +1,10 @@
 <div class="layout-constrain" layout="column">
+  <div layout="row" class="homepage-intro">
+    <div class="homepage-intro__bar">
+	  <h1 class="homepage-intro__title">Toxin Mappr</h1>
+      <hr/>
+	</div>
+  </div>
   <div layout="row" class="location-selector" layout-align="center center" layout-padding>
     <div>
       <h3 class="location-selector__title">Choose a location</h3>
@@ -11,6 +17,32 @@
       <md-button class="md-fab md-primary" flex="none" ng-click="showMap()" aria-label="Show map">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
+    </div>
+  </div>
+  <div layout="row" layout-align="center center">
+    <div>
+	<hr/>
+	<h2>Learn about toxins in your community and how to take action.</h2>
+	<hr/>
+	</div>
+  </div>
+  <div layout="row" layout-align="center start" class="location_resources">
+    <div flex="33" layout-full>
+	Maps of your location with measures of toxicity <br/>
+	<div layout="row" layout-full>
+	<div flex layout-full class="homebox">Box</div>	<div flex flex-offset="5" class="homebox">Box</div>
+    </div>
+	</div>
+	<div flex="33" flex-offset="5" layout-full>
+	EPA resources you can use to improve your community <br/>
+	<div layout="row">
+	<div flex class="homebox">Box</div>	<div flex flex-offset="5" class="homebox">Box</div>
+    </div>
+	</div>
+  </div>
+  <div layout="row" layout-align="center start" class="home-footer">
+    <div layout-full>
+	<h3 class="md-headline">Choose A Location Above</h3>
     </div>
   </div>
 </div>

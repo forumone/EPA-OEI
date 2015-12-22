@@ -1,0 +1,33 @@
+// @file
+// Styles for home.
+
+body {
+ font-family: "Roboto", Arial;
+}
+
+.homepage-intro {
+  margin-top: 24px;
+}
+
+.homepage-intro__bar {
+width: 99%;
+}
+
+.location_resources {
+  min-height: 300px;
+
+  .homebox {
+    background: #cddc39;
+	min-height: 150px;
+  }
+  
+}
+
+
+.home-footer {
+margin-top: 24px;
+min-height: 160px;
+background: #2196F3; 
+}
+
+
