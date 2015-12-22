@@ -3,6 +3,10 @@
 
 body {
  font-family: "Roboto", Arial;
+
+  background: image-url('/images/map.png');
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .homepage-intro {
@@ -10,14 +14,18 @@ body {
 }
 
 .homepage-intro__bar {
-width: 99%;
+  width: 99%;
+}
+
+.homepage-intro__title {
+  background: image-url('/images/ToxinMappr_logo.png');
 }
 
 .location_resources {
   min-height: 300px;
 
   .homebox {
-    background: #cddc39;
+    background: #4b7988;
 	min-height: 150px;
   }
   
@@ -25,9 +33,11 @@ width: 99%;
 
 
 .home-footer {
-margin-top: 24px;
-min-height: 160px;
-background: #2196F3; 
+  margin-top: 24px;
+  min-height: 160px;
+  background: #003340;
+  opacity: 1; // Leave this as 1
+  background-color: rgba(0,50,64,0.2); // This is in the form rgba(R,G,B,a) where a is your opacity
 }
 
 

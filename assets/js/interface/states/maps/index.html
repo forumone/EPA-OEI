@@ -1,4 +1,26 @@
+<div class="layout-constrain" layout="column">
+<div layout="row" class="homepage-intro">
+    <div class="homepage-intro__bar">
+	  <h1 class="homepage-intro__title">Toxin Mappr</h1>
+      <hr/>
+	</div>
+</div>
+
+<div layout="row">
+  <div flex="66">
+    <h3 class="md-headline">Selected location: location</h3>
+  </div>
+  <div flex="33" flex-offset="5">
+    Change location
+  </div>
+</div>
+<div layout="row">
+  <div>
+    <h4 class="md-headline">Maps</h4>
+  </div>
+</div>
 <div class="maps" layout="row" layout-wrap layout-fill layout-padding flex>
+
   <maps-map map="map" class="maps__map" ng-repeat="map in maps" flex="50" layout="column" layout-align="center center"></maps-map>
   
   <div flex="50" class="maps__map--new" layout="column" layout-align="center center">
@@ -6,5 +28,28 @@
     <md-button class="md-fab md-primary" ng-click="addMap($event)">
       <ng-md-icon icon="add"></ng-md-icon>
     </md-button>
+  </div>
+</div>
+
+<div layout="row">
+  <div>
+    <h2>Resources</h2>
+  </div>
+  <div>
+    Go to Maps
+  </div>
+</div>
+
+<div layout="row">
+   <h3>Here are suggested EPA resources for location</h3>
+</div>
+
+<div layout="row">Resource title - Resource description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
+</div>
+
+  <div layout="row" layout-align="center start" class="home-footer">
+    <div layout-full>
+	<h3 class="md-headline">Footer</h3>
+    </div>
   </div>
 </div>
