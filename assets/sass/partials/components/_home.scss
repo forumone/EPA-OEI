@@ -17,7 +17,7 @@ width: 99%;
   min-height: 300px;
 
   .homebox {
-    background: #cddc39;
+    background: #4b7988;
 	min-height: 150px;
   }
   
@@ -27,7 +27,9 @@ width: 99%;
 .home-footer {
 margin-top: 24px;
 min-height: 160px;
-background: #2196F3; 
+background: #003340;
+opacity: 1; // Leave this as 1
+background-color: rgba(0,50,64,0.2); // This is in the form rgba(R,G,B,a) where a is your opacity
 }
 
 
