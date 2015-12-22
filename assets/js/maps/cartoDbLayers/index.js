@@ -7,23 +7,19 @@ angular.module('nciMaps').service('cartoDbLayers', function($injector, $q, mapCo
 
   function popup() {
     var point = popupInfo[0][2];
+    var currentMap = popupInfo[0][6];
 
     var promises = _.map(popupInfo, _.spread(function(info, event, latlng, pos, data, index) {
       return info.pointInfo(latlng, data);
     }));
     
-    promises.unshift(cancerScore.pointInfo(point));
-    
     var markup = "";
     
     $q.all(promises).then(function(results) {
       markup = results.join('<hr />');
-    }).finally(function() {
-      L.popup()
-        .setLatLng(point)
-        .setContent(markup)
-        .openOn(map);
+      currentMap.openPopup(markup, point);
       
+    }).finally(function() {
       popupInfo = [];
     });
   }
@@ -47,7 +43,9 @@ angular.module('nciMaps').service('cartoDbLayers', function($injector, $q, mapCo
   /**
    * Creates the layer / sublayer from CartoDB
    */
-  function createLayer(name, opts) {
+  function createLayer(name, opts, currentMap) {
+    currentMap = currentMap || map;
+    
     var service = $injector.get(name),
         sublayer = {
           sql: service.sql(opts),
@@ -58,7 +56,7 @@ angular.module('nciMaps').service('cartoDbLayers', function($injector, $q, mapCo
     return $q.all(sublayer)
       .then(function (sublayer) {
         // create carto layer
-        var promise = cartodb.createLayer(map, {
+        var promise = cartodb.createLayer(currentMap, {
           user_name: 'f1cartodb',
           type: 'cartodb',
           legends: true,
@@ -78,12 +76,14 @@ angular.module('nciMaps').service('cartoDbLayers', function($injector, $q, mapCo
       })
       .then(
         function (info) {
-          map.addLayer(info.layer);
+          currentMap.addLayer(info.layer);
 
           info.layer.setInteraction(true);
           info.layer.setOpacity(0.5);
           info.layer.on('featureClick', function () {
-            popupInfo.push([info].concat(_.toArray(arguments)));
+            var popup = [info].concat(_.toArray(arguments), [currentMap]);
+            
+            popupInfo.push(popup);
             showPopup();
           });
           

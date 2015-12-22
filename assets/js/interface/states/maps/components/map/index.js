@@ -20,70 +20,22 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
           scope.layerData = scope.layers[scope.map.layer];
           scope.service = $injector.get(scope.layerData.$service);
           
-          scope.colors = mapColors.allocate(scope.service.scaleType),
-          scope.options = _.extend(scope.layerData, {
-            $$colors: scope.colors,
-          });
-
-          scope.name = scope.service.getName(scope.options);
-          
-          scope.sublayer = {
-            sql: scope.service.sql(scope.options),
-            cartocss: scope.service.css(scope.options),
-            interactivity: scope.service.interactivity,
-          };
-          
           scope.mapOptions = {
             zoom : $stateParams.zoom,
             center : [$stateParams.lat, $stateParams.lng]
           };
+              
+          scope.name = scope.service.getName(scope.layerData);
           
           wrap(cartodb.createVis($('div.map__map', element[0]), 'https://forumone.cartodb.com/u/f1cartodb/api/v2/viz/ada5f74c-a7f7-11e5-b776-0e5db1731f59/viz.json', scope.mapOptions))
           .then(function(cartoMap) {
             scope.leafletMap = cartoMap;
             
-            return $q.all(scope.sublayer)
-          })
-          .then(function (sublayer) {
-            var promise = cartodb.createLayer(scope.leafletMap.getNativeMap(), {
-              user_name: 'f1cartodb',
-              type: 'cartodb',
-              legends: true,
-              sublayers: [sublayer],
+            scope.service.createLayer(scope.layerData, scope.leafletMap.getNativeMap())
+            .then(function(info) {
+              scope.info = info;
             });
-            
-            return wrap(promise);
           })
-          .then(function(layer) {
-            return $q.all({
-              name: scope.name,
-              layer: layer,
-              service: scope.service,
-              legend: cartoDbLayers.makeLegend(scope.service, scope.options),
-            })
-          })
-          .then(function(info) {
-            scope.leafletMap.getNativeMap().addLayer(info.layer);
-            
-            info.layer.setInteraction(true);
-            info.layer.setOpacity(0.5);
-            info.layer.on('featureClick', function () {
-              popupInfo.push([info].concat(_.toArray(arguments)));
-              showPopup();
-            });
-            scope.legend = new cdb.geo.ui.Legend
-            .Stacked({
-              legends: [ info.legend ],
-            })
-            .render()
-            .$el
-            .wrap('<div>')
-            .parent()
-            .html();
-          })
-          .catch(function(err) {
-            console.log(err);
-          });
         }
       });
     },

@@ -39,13 +39,13 @@ angular.module('nciMaps').service('cdcWonderCancerIncidenceState', function($tem
     return 'Cancer Incidence';
   }
  
-  function createLayer(opts) {
+  function createLayer(opts, map) {
     var colors = mapColors.allocate(service.scaleType),
         options = _.extend({}, opts, {
           $$colors: colors,
         });
 
-    return cartoDbLayers.createLayer(service.serviceName, options)
+    return cartoDbLayers.createLayer(service.serviceName, options, map)
       .then(function (info) {
         info = _.extend(info, {
           setOptions: function (opts) {
