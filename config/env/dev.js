@@ -11,8 +11,9 @@
  */
 
 module.exports = {
-  proxyHost : 'ncisbir.forumone.com',
+  proxyHost : 'epaoeirfi.byf1.io',
   proxyPort : '80',
+  port : 2820,
   
   /***************************************************************************
    * Set the default database connection for models in the development       *

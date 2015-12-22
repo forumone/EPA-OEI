@@ -50,7 +50,7 @@ end
 # install NPM modules and run grunt when building for deployment
 Rake::Task["web:build"].enhance do
   Dir.chdir fetch(:rsync_stage) do
-    system "npm", "install", "--loglevel silent", "--production"
+    system "npm", "install", "--loglevel silent"
     system "grunt build"
   end
 end
