@@ -9,7 +9,7 @@ angular.module('epaOei').controller('HomeController', function($scope, $statePar
     var layers = mapLayers.getLayers();
     
     params = {
-      zoom : 8,
+      zoom : 10,
       layers : [angular.toJson(layers.trinet), angular.toJson(layers.nata)],
     };
     
