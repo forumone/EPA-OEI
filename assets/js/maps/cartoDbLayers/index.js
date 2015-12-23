@@ -185,8 +185,8 @@ angular.module('nciMaps').service('cartoDbLayers', function($injector, $q, mapCo
   /**
    * Remove a layer then triggers the layerRemoved event
    */
-  function hideLayer(info) {
-    map.removeLayer(info.layer);
+  function hideLayer(info, currentMap) {
+    currentMap.removeLayer(info.layer);
 
     if (info.active) {
       info.active = false;

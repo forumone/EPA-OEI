@@ -55,7 +55,7 @@ angular.module('nciMaps').service('cdcWonderCancerIncidenceState', function($tem
             cartoDbLayers.showLayer(info);
           },
           detach: function () {
-            cartoDbLayers.hideLayer(info);
+            cartoDbLayers.hideLayer(info, map);
             colors.release();
           },
           pointInfo: function (latlng, data) {

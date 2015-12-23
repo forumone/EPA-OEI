@@ -1,4 +1,4 @@
-angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $stateParams, $injector, mapLayers, $q, $exceptionHandler, mapColors, leafletData, cartoDbLayers, $sce) {
+angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $stateParams, $injector, mapLayers, $q, $exceptionHandler, mapColors, leafletData, cartoDbLayers, $sce, locationData) {
   return {
     restrict : 'E',
     templateUrl : 'states/maps/components/map/index.html',
@@ -27,7 +27,9 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
               
           scope.name = scope.service.getName(scope.layerData);
           
-          wrap(cartodb.createVis($('div.map__map', element[0]), 'https://forumone.cartodb.com/u/f1cartodb/api/v2/viz/ada5f74c-a7f7-11e5-b776-0e5db1731f59/viz.json', scope.mapOptions))
+          var promise = angular.isDefined(scope.leafletMap) ? $q.when(scope.leafletMap) : wrap(cartodb.createVis($('div.map__map', element[0]), 'https://forumone.cartodb.com/u/f1cartodb/api/v2/viz/ada5f74c-a7f7-11e5-b776-0e5db1731f59/viz.json', scope.mapOptions));
+          
+          promise
           .then(function(cartoMap) {
             scope.leafletMap = cartoMap;
             
@@ -60,15 +62,17 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
           clickOutsideToClose : true,
           fullscreen : $mdMedia('sm'),
           locals : {
-            currentLayer : null
+            currentLayer : $scope.map.layer
           }
         })
         .then(function(layer) {
-          $scope.maps.push({ id : 'foo' });
+          $scope.info.detach();
+          $scope.map = _.clone(_.extend($scope.map, { layer : layer }));
         });
       }
       
       $scope.deleteLayer = function() {
+        $scope.info.detach();
         $scope.$emit('deleteMap', $scope.map);
       }
       

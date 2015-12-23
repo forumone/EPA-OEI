@@ -94,7 +94,7 @@ angular.module('nciMaps').service('nciCountyCancerRateLayer', function($template
             cartoDbLayers.showLayer(info);
           },
           detach: function () {
-            cartoDbLayers.hideLayer(info);
+            cartoDbLayers.hideLayer(info, map);
             colors.release();
           },
           pointInfo: function (latlng, data) {

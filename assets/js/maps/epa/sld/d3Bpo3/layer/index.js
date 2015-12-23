@@ -74,7 +74,7 @@ angular.module('nciMaps').service('epaSldMapD3Bpo3Layer', function($templateCach
             cartoDbLayers.showLayer(info);
           },
           detach: function () {
-            cartoDbLayers.hideLayer(info);
+            cartoDbLayers.hideLayer(info, map);
             colors.release();
           },
           pointInfo: function (latlng, data) {

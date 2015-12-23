@@ -29,6 +29,6 @@ angular.module('epaOei').controller('MapsController', function($scope, $statePar
   };
   
   $scope.$on('deleteMap', function(evt, map) {
-    _.pull($scope.maps, map);
+    _.remove($scope.maps, { '$$hashKey' : map.$$hashKey});
   });
 });

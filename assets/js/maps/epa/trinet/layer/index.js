@@ -44,7 +44,7 @@ angular.module('nciMaps').service('epaTrinetLayer', function($templateCache, $in
             cartoDbLayers.showLayer(info);
           },
           detach: function () {
-            cartoDbLayers.hideLayer(info);
+            cartoDbLayers.hideLayer(info, map);
             colors.release();
           },
           toJSON: function () {
