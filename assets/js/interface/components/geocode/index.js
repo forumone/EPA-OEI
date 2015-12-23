@@ -23,7 +23,6 @@ angular.module('epaOei').directive('geocode', function() {
 
       google.maps.event.addListener(autocomplete, 'place_changed', function() {
         var place = autocomplete.getPlace();
-
         scope.$apply(function() {
           scope.geocode({
             $place : validPlace(place) ? place : null

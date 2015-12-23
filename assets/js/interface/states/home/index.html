@@ -4,11 +4,11 @@
       <h3 class="location-selector__title">Choose a location</h3>
       <div class="location-selector__description">For example, your neighborhood!</div>
     </div>
-    <div layout="row">
-      <md-input-container md-no-float class="md-block">
-        <input type="text" name="location" ng-model="location" placeholder="City, zip code, or even street" aria-label="City, zip code, or even street" />
+    <div layout="row" flex class="location-selector__input" style="max-width: 500px;">
+      <md-input-container md-no-float class="md-block" flex>
+        <input type="text" name="location" geocode="place = $place" ng-model="location" placeholder="City, zip code, or even street" aria-label="City, zip code, or even street" />
       </md-input-container>
-      <md-button class="md-fab md-primary" flex="none" ng-click="showMap()" aria-label="Show map">
+      <md-button class="md-fab md-primary" flex="none" ng-disabled="!addressSelected" ng-click="showMap()" aria-label="Show map">
         <ng-md-icon icon="search"></ng-md-icon>
       </md-button>
     </div>

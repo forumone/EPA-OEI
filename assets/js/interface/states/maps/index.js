@@ -6,6 +6,8 @@ angular.module('epaOei').controller('MapsController', function($scope, $statePar
     }
   });
   
+  $scope.formatted_address = $stateParams.f;
+  
   $scope.addMap = function(evt) {
     $mdDialog.show({
       controller : 'MapsSelectMap',
