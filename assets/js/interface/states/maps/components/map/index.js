@@ -1,4 +1,4 @@
-angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $stateParams, $injector, mapLayers, $q, $exceptionHandler, mapColors, leafletData, cartoDbLayers) {
+angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $stateParams, $injector, mapLayers, $q, $exceptionHandler, mapColors, leafletData, cartoDbLayers, $sce) {
   return {
     restrict : 'E',
     templateUrl : 'states/maps/components/map/index.html',
@@ -34,6 +34,17 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
             scope.service.createLayer(scope.layerData, scope.leafletMap.getNativeMap())
             .then(function(info) {
               scope.info = info;
+              var content = new cdb.geo.ui.Legend
+                .Stacked({
+                  legends: [info.legend],
+                })
+                .render()
+                .$el
+                .wrap('<div>')
+                .parent()
+                .html();
+              
+              scope.legend = $sce.trustAsHtml(content);
             });
           })
         }
