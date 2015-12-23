@@ -1,0 +1,16 @@
+.header {
+  border-bottom: 1px solid;
+}
+
+.header__logo {
+  height: 60px; 
+  max-width: 220px;
+  a {
+    background-image: url('/images/ToxinMappr_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 60px;
+    width: 100%;
+  }
+}

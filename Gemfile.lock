@@ -20,6 +20,3 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 3.1)
   net-ssh (~> 2.9.2)
-
-BUNDLED WITH
-   1.11.2
