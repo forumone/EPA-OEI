@@ -69,7 +69,7 @@ angular.module('epaOei').directive('mapsMap', function($mdDialog, $mdMedia, $sta
       }
       
       $scope.deleteLayer = function() {
-        
+        $scope.$emit('deleteMap', $scope.map);
       }
       
       function parseCenter() {
