@@ -8,7 +8,7 @@
   padding-left: 1em;
   padding-right: 1em;
 
-  @if $breakpoint-no-queries {
+  /*@if $breakpoint-no-queries {
     width: em($max-page-width);
-  }
+  }*/
 }

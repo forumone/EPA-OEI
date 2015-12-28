@@ -1,5 +1,42 @@
 .location-selector {
+	.location-select__text {
+		text-align: right;
+		font-size: 18px;
+	}
   .location-selector__input {
     max-width: 500px !important;
   }
+  .location-selector__title {
+  	font-size: 50px;
+  	padding-bottom: 15px;
+  	font-weight: 600;
+  }
+}
+
+.location-selector__input {
+	.md-input,
+	.md-input:focus {
+		border: 1px solid $tm-ltgray;
+		padding: 40px 20px;
+		text-align: center;
+		color: $tm-ltgray;
+		font-size: 18px;
+	}
+	.md-input:focus {
+		border-color: $tm-drkgray;
+	}
+	.md-button[disabled] {
+		background: $tm-yellow;
+	}
+	.md-button {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border-radius: 0;
+		border: 1px solid $tm-drkgray;
+	}
+	ng-md-icon {
+		height: auto;
+		width: auto;
+		color: $tm-drkgray;
+	}
 }

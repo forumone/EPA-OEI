@@ -67,10 +67,9 @@ blockquote {
 }
 
 body {
-  background-color: $body-color;
+  //background-color: $body-color;
   color: $primary-text-color;
   margin: 0;
-  max-width: $max-page-width;
   padding: 0;
   word-wrap: break-word;
 }
@@ -140,6 +139,7 @@ form {
   @include hyphens(none);
   line-height: 1.1;
   text-rendering: optimizeLegibility;
+  font-weight: 600;
 }
 
 h1 {
@@ -336,7 +336,9 @@ small {
   @include adjust-font-size-to($font-size-md);
 }
 
-strong {}
+strong {
+  font-weight: 700;
+}
 
 sub {
   bottom: -0.25em;

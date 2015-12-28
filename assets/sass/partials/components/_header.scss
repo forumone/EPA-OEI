@@ -1,5 +1,16 @@
 .header {
-  border-bottom: 1px solid;
+  border-top: 8px solid $tm-drkblue;
+  border-bottom: 1px solid $tm-ltgray;
+  max-width: $max-page-width;
+  margin: 0 auto 80px auto;
+  md-pagination-wrapper {
+    right: 0;
+    left: auto;
+    h3 {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .header__logo {

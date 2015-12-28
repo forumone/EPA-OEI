@@ -15,13 +15,21 @@ $turq: #3d95ad;
 $white: #fff;
 $yellow: #ebca27;
 
-$primary-text-color: #333;
-$secondary-text-color: #555;
-$heading-text-color: #333;
+$tm-drkgray: #59595b;
+$tm-ltgray: #a8a9ad;
+$tm-yellow: #d5af10;
+$tm-drkblue: #003d52;
+$tm-ltblue: #4b7988;
+$tm-green: #85a456;
+
+
+$primary-text-color: $tm-drkgray;
+$secondary-text-color: $tm-drkblue;
+$heading-text-color: $tm-drkgray;
 $body-color: #fff;
 $link-color: #2c839b;
 $link-hover-color: green;
-$selection-background: blue;
+$selection-background: $tm-drkblue;
 $selection-foreground: #fff;
 $status-color: #4d8e4d;
 $warning-color: #fcce00;
