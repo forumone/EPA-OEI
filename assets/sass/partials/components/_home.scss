@@ -18,9 +18,8 @@
 .home-footer {
   margin-top: 24px;
   min-height: 160px;
-  background: #003340;
-  opacity: 1; // Leave this as 1
-  background-color: rgba(0,50,64,0.2); // This is in the form rgba(R,G,B,a) where a is your opacity
+  background: rgba(0, 61, 82, .85);
+  mix-blend-mode: multiply;
 }
 
 
