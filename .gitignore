@@ -122,3 +122,4 @@ nbproject
 .idea
 .vagrant
 /tmp
+assets/.DS_Store
