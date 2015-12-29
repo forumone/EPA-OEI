@@ -1,7 +1,7 @@
 <md-dialog aria-label="Edit Layer" ng-cloak class="edit-layer" flex="50"> 
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2>{{title}}</h2>
+      <h3>Add Data Set and Map</h3>
       <span flex></span>
       <md-button class="md-icon-button" ng-click="cancel()">
         <ng-md-icon icon="close" aria-label="Close dialog"></md-icon> 
@@ -44,7 +44,7 @@
       </md-select>
     </md-input-container>
   </md-dialog-content>
-  <md-dialog-actions layout="row" layout-align="end center" layout-padding>
+  <md-dialog-actions layout="row" layout-align="end center" layout-padding class="layout-dialog-buttons">
     <md-button class="md-raised md-primary" ng-click="setLayer()">Add layer</md-button>
     <md-button class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
   </md-dialog-actions>

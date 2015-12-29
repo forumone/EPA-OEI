@@ -1,15 +1,58 @@
 .md-dialog-container {
 	z-index: 200;
+	.md-toolbar-tools .md-icon-button {
+		background: white;
+		ng-md-icon {
+			fill: $tm-drkblue;
+		}
+	}
+	.md-button.md-primary.md-raised {
+		background: $tm-drkblue;
+	}
 }
 
 .md-select-menu-container {
 	z-index: 210;
-	margin-top: 85px;
 	max-width: 695px;
 	min-width: 690px!important;
-	margin-left: 10px;
+	font-size: 18px;
+	@media (min-width: 980px) {
+		margin-top: 85px;
+		margin-left: 10px;
+	}
+}
+
+.md-select-value {
+	font-size: 18px;
 }
 
 md-backdrop.md-dialog-backdrop {
 	z-index: 180;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+	background: $tm-drkblue;
+	color: white;
+	h3 {
+		color: white;
+	}
+}
+
+.md-select-value.md-select-placeholder,
+md-card md-card-title md-card-title-text {
+	font-size: 18px;
+}
+
+.layout-dialog-buttons {
+	padding-right: 30px;
+}
+
+md-select-menu.md-default-theme md-option[selected], md-select-menu md-option[selected] {
+	color: $tm-drkblue;
+}
+
+@media (max-width:980px) {
+	md-input-container {
+		width: 100%;
+	}
 }

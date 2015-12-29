@@ -1,8 +1,21 @@
 // @file
 // Styles for buttons.
 
-.button {
+.button, .md-button {
   @extend %button;
+  border: 0;
+}
+
+.md-button:not([disabled]).md-icon-button:hover {
+	background: $tm-ltblue;
+}
+
+.md-button.md-icon-button {
+	padding: 0;
+}
+
+.md-button.md-raised:not([disabled]) {
+	box-shadow: none;
 }
 
 .button--large {

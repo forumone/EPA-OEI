@@ -27,8 +27,8 @@ $primary-text-color: $tm-drkgray;
 $secondary-text-color: $tm-drkblue;
 $heading-text-color: $tm-drkgray;
 $body-color: #fff;
-$link-color: #2c839b;
-$link-hover-color: green;
+$link-color: $tm-ltblue;
+$link-hover-color: $tm-drkblue;
 $selection-background: $tm-drkblue;
 $selection-foreground: #fff;
 $status-color: #4d8e4d;
@@ -39,8 +39,8 @@ $gradient-light: rgba(255, 255, 255, 0.2);
 $gradient-dark: rgba(0, 0, 0, 0.2);
 
 // Buttons
-$button-bg-color: #f9f9f9;
-$button-text-color: #333;
+$button-bg-color: $tm-drkblue;
+$button-text-color: white;
 
 // Forms
 $form-bg-color: #eee; // Used for fieldsets and vertical-tabs.

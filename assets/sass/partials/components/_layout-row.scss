@@ -1,0 +1,11 @@
+.layout-row {
+	flex-wrap: wrap;
+}
+
+.layout-row > .flex-50, .layout-row > .flex-50 {
+	@media (max-width: 980px) {
+		width: 100%;
+		max-width: 100%;
+		flex: initial;
+	}
+}
