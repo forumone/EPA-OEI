@@ -4,14 +4,14 @@
   }
   .angular-leaflet-map, .map__map {
   	height: 385px;
-  	width: 410px;
+  	width: 500px;
   }
   
   margin: 50px 0 0 0;
 }
 
 .maps__map--new {
-  min-height: 410px;
+  min-height: 210px;
 }
 
 .map__legend {
@@ -61,4 +61,8 @@
       background: #f1f1f1;
     }
   }
+}
+
+.resources {
+  padding: 50px 0;
 }

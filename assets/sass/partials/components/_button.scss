@@ -8,3 +8,16 @@
 .button--large {
   @extend %button--large;
 }
+
+.button-add.md-button.md-primary.md-fab,
+.button-add.md-button.md-primary.md-fab:not([disabled]) {
+	background: $tm-drkblue;
+	padding: 0;
+	&:hover {
+		background: $tm-ltblue;
+	}
+	ng-md-icon {
+		height: 48px;
+		width: 48px;
+	}
+}

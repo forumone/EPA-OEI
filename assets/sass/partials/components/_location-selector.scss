@@ -25,8 +25,12 @@
 	.md-input:focus {
 		border-color: $tm-drkgray;
 	}
-	.md-button[disabled] {
+	.md-button[disabled],
+	.md-button {
 		background: $tm-yellow;
+		&:hover, &:focus {
+			background: $tm-yellow;
+		}
 	}
 	.md-button {
 		margin-top: 20px;

@@ -1,0 +1,15 @@
+.md-dialog-container {
+	z-index: 200;
+}
+
+.md-select-menu-container {
+	z-index: 210;
+	margin-top: 85px;
+	max-width: 695px;
+	min-width: 690px!important;
+	margin-left: 10px;
+}
+
+md-backdrop.md-dialog-backdrop {
+	z-index: 180;
+}

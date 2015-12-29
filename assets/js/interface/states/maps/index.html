@@ -25,35 +25,33 @@
   
   <div flex="50" class="maps__map--new" layout="column" layout-align="center center">
     <p>Add data set and map</p>
-    <md-button class="md-fab md-primary" ng-click="addMap($event)">
-      <ng-md-icon icon="add"></ng-md-icon>
+    <md-button class="md-fab md-primary button-add" ng-click="addMap($event)">
+      <ng-md-icon icon="add" size="48"></ng-md-icon>
     </md-button>
   </div>
 </div>
 
-<div layout="row">
-  <div flex flex-offset="5">
-    <h2>Resources</h2>
-  </div>
-  <div flex>
-    Go to Maps
-  </div>
-</div>
-
-<div layout="row">
-  <div flex flex-offset="5">
-   <h3>Here are suggested EPA resources for location</h3>
-  </div>
-</div>  
-
-<div layout="row">
-<div flex flex-offset="5">Resource title - Resource description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.
-</div>
-</div>
-
-  <div layout="row" layout-align="center start" class="home-footer">
-    <div layout-full>
-	<h3 class="md-headline">Footer</h3>
+<div class="resources">
+  <div layout="row">
+    <div flex flex-offset="5">
+      <h2>Resources</h2>
+      <h3>Here are suggested EPA resources for location</h3>
     </div>
+    <div flex>
+      Go to Maps
+    </div>
+  </div>  
+
+  <div layout="row">
+    <div flex flex-offset="5">
+      <p>Resource title - Resource description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+    </div>
+  </div>
+</div>
+  
+</div>
+<div layout="row" layout-align="center start" class="home-footer">
+  <div layout-full class="layout-constrain">
+    <h4 class="md-headline">Footer</h4>
   </div>
 </div>
